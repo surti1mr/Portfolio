@@ -51,7 +51,7 @@ export default function AboutSection() {
           >
             <p className="text-[#8899AA] text-base leading-relaxed">
               I&apos;m an AI/ML engineer who specializes in building production-grade
-              systems — the kind that actually ship. I graduated from{" "}
+              systems that actually ship. I graduated from{" "}
               <span className="text-[#E8F4FD]">
                 Central Michigan University
               </span>{" "}
@@ -63,7 +63,7 @@ export default function AboutSection() {
               From dark web monitoring systems at a global cybersecurity firm to
               agentic RAG pipelines and real-time manufacturing dashboards at
               Detroit Manufacturing Systems / Voltava, I care deeply about code that
-              solves real problems — and about communicating those solutions to
+              solves real problems, and about communicating those solutions to
               the people who need them.
             </p>
             <p className="text-[#8899AA] text-base leading-relaxed">

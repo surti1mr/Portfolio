@@ -84,7 +84,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.45 }}
             className="text-[#8899AA] text-base leading-relaxed max-w-lg"
           >
-            I build production AI systems that actually work — from agentic RAG
+            I build production AI systems that actually work, from agentic RAG
             pipelines to real-time dashboards. And apparently I&apos;m also funny.
           </motion.p>
 
@@ -104,13 +104,6 @@ export default function HeroSection() {
             >
               View My Work
             </button>
-            <a
-              href="/resume.pdf"
-              download
-              className="px-7 py-3 border border-[#7C3AED] text-[#7C3AED] font-semibold rounded-md hover:bg-[#7C3AED] hover:text-white transition-all duration-200 text-sm"
-            >
-              Download Resume
-            </a>
           </motion.div>
         </div>
 

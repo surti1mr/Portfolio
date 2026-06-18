@@ -20,7 +20,7 @@ const experiences: Experience[] = [
     location: "Detroit, MI",
     bullets: [
       "Fixed bugs across 6 in-house VB.NET applications integrated with SQL Server, improving stability and performance.",
-      "Built and optimized 12 RDL reports using SSRS, OAS, and MQTT — cutting manual reporting effort by 40%.",
+      "Built and optimized 12 RDL reports using SSRS, OAS, and MQTT, cutting manual reporting effort by 40%.",
       "Developed Incorta API integrations for in-house apps to streamline reporting workflows.",
       "Integrated SAP API into in-house applications, connecting enterprise ERP data directly with internal tooling.",
       "Leveraged AI-assisted development (Cursor) to reduce development time by 70% across the internship.",

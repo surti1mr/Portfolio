@@ -275,7 +275,7 @@ export default function HeroChatPanel() {
                 lineHeight: 1.6,
               }}
             >
-              Ask me anything about Mayank —<br />
+              Ask me anything about Mayank.<br />
               his projects, skills, or availability.
             </p>
           </div>

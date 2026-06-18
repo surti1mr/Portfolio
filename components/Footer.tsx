@@ -51,11 +51,11 @@ export default function Footer() {
         <div className="text-center">
           <p className="font-mono text-xs text-[#8899AA]">
             Built by{" "}
-            <span className="text-[#E8F4FD]">Mayank Surti</span> · 2025
+            <span className="text-[#E8F4FD]">Mayank Surti</span> · 2026
           </p>
-          <p className="font-mono text-xs text-[#8899AA] mt-1">
+          {/* <p className="font-mono text-xs text-[#8899AA] mt-1">
             Next.js · Tailwind · Framer Motion
-          </p>
+          </p> */}
         </div>
 
         {/* Signature line */}
