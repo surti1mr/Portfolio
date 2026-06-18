@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0A0E1A;
+  --surface: #0F1629;
+  --accent: #00D4FF;
+  --accent-2: #7C3AED;
+  --text-primary: #E8F4FD;
+  --text-secondary: #8899AA;
+  --highlight: #00FFB3;
+  --border: #1E2D42;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Dot-grid background pattern — hero section only */
+.dot-grid {
+  background-image: radial-gradient(circle, #1E2D42 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Glassmorphism card base */
+.glass-card {
+  background: rgba(15, 22, 41, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Section label style (// label_name) */
+.section-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 0.8125rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 212, 255, 0.2);
+  color: var(--text-primary);
+}
+
+/* Tech badge hover glow */
+.badge-ai:hover {
+  border-color: var(--accent-2) !important;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+}
+.badge-default:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}
