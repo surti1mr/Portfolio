@@ -6,9 +6,9 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 import HeroChatPanel from "@/components/HeroChatPanel";
 
 const roles = [
-  "AI/ML Engineer",
-  "RAG Systems Builder",
-  "Full-Stack Developer",
+  "AI Application Engineer",
+  "Agentic AI Builder",
+  "Full-Stack AI Developer",
   "2nd Place Comedian 🎤",
 ];
 
@@ -84,8 +84,8 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.45 }}
             className="text-[#8899AA] text-base leading-relaxed max-w-lg"
           >
-            I build production AI systems that actually work, from agentic RAG
-            pipelines to real-time dashboards. And apparently I&apos;m also funny.
+            I build AI-powered applications that actually ship — agentic pipelines,
+            RAG systems, and full-stack LLM products. And apparently I&apos;m also funny.
           </motion.p>
 
           {/* CTAs */}

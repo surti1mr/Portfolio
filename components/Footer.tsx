@@ -50,7 +50,7 @@ export default function Footer() {
         {/* Built with */}
         <div className="text-center">
           <p className="font-mono text-xs text-[#8899AA]">
-            Built by{" "}
+            Built by{" "}e
             <span className="text-[#E8F4FD]">Mayank Surti</span> · 2026
           </p>
           {/* <p className="font-mono text-xs text-[#8899AA] mt-1">

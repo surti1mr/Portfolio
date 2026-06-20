@@ -11,15 +11,20 @@ interface BadgeCategory {
 
 const categories: BadgeCategory[] = [
   {
-    label: "AI & ML",
+    label: "AI & LLM Stack",
     type: "ai",
     skills: [
       "LangChain",
       "LangGraph",
+      "Agentic AI",
       "RAG",
       "FAISS",
+      "Vector Search",
+      "Tool Calling",
       "LLaMA 3.3 70B",
       "Groq",
+      "OpenAI API",
+      "HuggingFace",
       "Sentence Transformers",
       "Prompt Engineering",
       "Semantic Search",

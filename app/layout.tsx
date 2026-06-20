@@ -21,21 +21,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mayank Surti — AI/ML Engineer",
+  title: "Mayank Surti — AI Application Engineer",
   description:
-    "AI engineer specializing in RAG systems, agentic AI, and full-stack development. M.S. Information Systems, 3.95 GPA. Based in Michigan.",
+    "Full-stack AI engineer specializing in agentic AI, RAG pipelines, and LLM-powered applications. Building production systems with LangGraph, FastAPI, and Next.js.",
   keywords: [
     "AI engineer",
+    "agentic AI",
     "RAG",
-    "LangChain",
     "LangGraph",
+    "LangChain",
     "FAISS",
     "FastAPI",
     "Next.js",
-    "full-stack",
+    "LLM",
+    "Groq",
+    "full-stack AI developer",
   ],
   openGraph: {
-    title: "Mayank Surti — AI/ML Engineer",
+    title: "Mayank Surti — AI Application Engineer",
     description:
       "Building production AI systems and occasionally doing stand-up comedy.",
     url: "https://mayanksurti.dev",

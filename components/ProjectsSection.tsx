@@ -50,6 +50,17 @@ function GitHubIcon() {
   );
 }
 
+function CompanyBadge({ name }: { name: string }) {
+  return (
+    <span
+      className="inline-block font-mono rounded px-2 py-0.5 text-[#8899AA] border border-[#1E2D42] bg-[#070B14]"
+      style={{ fontSize: 10 }}
+    >
+      🏢 {name}
+    </span>
+  );
+}
+
 // ── PFC card ─────────────────────────────────────────────────────────────────
 
 const PFC_ROLES = [
@@ -108,11 +119,17 @@ function PFCCard({ reducedMotion }: { reducedMotion: boolean }) {
           <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>Performance Fitness Concepts</h3>
           <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>Health & Wellness App</p>
         </div>
-        <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded-full px-2 py-1 flex-shrink-0" style={{ fontSize: 10 }}>Web App</span>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.06)" }}>Production</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>Client Project</span>
+        </div>
+      </div>
+      <div className="mt-2 mb-1">
+        <CompanyBadge name="Web Access Global" />
       </div>
 
       {/* Description */}
-      <p className="text-[#8899AA] text-sm mt-3" style={{ lineHeight: 1.7 }}>
+      <p className="text-[#8899AA] text-sm mt-2" style={{ lineHeight: 1.7 }}>
         Web application that determines a user&apos;s metabolic type and generates fully personalized nutrition and exercise plans. Integrated mail services for plan delivery and built automated PDF report generation to reduce manual effort by 50%.
       </p>
 
@@ -170,7 +187,7 @@ function PFCCard({ reducedMotion }: { reducedMotion: boolean }) {
 // ── Medha STPC card ───────────────────────────────────────────────────────────
 
 const MEDHA_HIERARCHY = [
-  { icon: "🏛️", role: "Principal", sub: "Top-level admin — full system oversight", color: "#00D4FF", bg: "rgba(0,212,255,0.08)", border: "rgba(0,212,255,0.25)", minW: 200 },
+  { icon: "🏛️", role: "Principal", sub: "Top-level admin, full system oversight", color: "#00D4FF", bg: "rgba(0,212,255,0.08)", border: "rgba(0,212,255,0.25)", minW: 200 },
   { icon: "🗺️", role: "Zone Admin", sub: "Manages multiple colleges within a zone", color: "#00D4FF", bg: "rgba(0,212,255,0.06)", border: "rgba(0,212,255,0.18)", minW: 240 },
   { icon: "🏫", role: "College Admin", sub: "Manages students within their institution", color: "#00D4FF", bg: "rgba(0,212,255,0.04)", border: "rgba(0,212,255,0.12)", minW: 280 },
   { icon: "🎓", role: "Student", sub: "Only admin-approved students can login", color: "#7C3AED", bg: "rgba(124,58,237,0.05)", border: "rgba(124,58,237,0.2)", minW: 320 },
@@ -208,11 +225,17 @@ function MedhaCard({ reducedMotion }: { reducedMotion: boolean }) {
           <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>Medha STPC</h3>
           <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>EdTech Platform</p>
         </div>
-        <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded-full px-2 py-1 flex-shrink-0" style={{ fontSize: 10 }}>EdTech</span>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.06)" }}>Production</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>75,000+ Users</span>
+        </div>
+      </div>
+      <div className="mt-2 mb-1">
+        <CompanyBadge name="Web Access Global" />
       </div>
 
       {/* Description */}
-      <p className="text-[#8899AA] text-sm mt-3" style={{ lineHeight: 1.7 }}>
+      <p className="text-[#8899AA] text-sm mt-2" style={{ lineHeight: 1.7 }}>
         Tech-enabled polytechnic system designed to improve graduate employment and employability. Built frontend modules and REST APIs for the platform. Used by 75,000+ students across institutions.
       </p>
 
@@ -262,7 +285,16 @@ function MedhaCard({ reducedMotion }: { reducedMotion: boolean }) {
 
       {/* Footer */}
       <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#1E2D42]">
-        <span className="font-mono italic text-[#8899AA]" style={{ fontSize: 11 }}>No public link available</span>
+        <a
+          href="https://github.com/surti1mr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 font-mono hover:opacity-75 transition-opacity"
+          style={{ fontSize: 11, color: "#00D4FF" }}
+        >
+          <GitHubIcon />
+          View on GitHub
+        </a>
       </div>
     </motion.div>
   );
@@ -279,17 +311,17 @@ const CG_CONTRIBUTIONS = [
   {
     icon: "🌑",
     title: "Dark Web Monitoring",
-    desc: "Worked on Deep Diver — the platform's dark web monitoring engine. Continuously scans for compromised credentials and PII. Triggers instant white-labeled alerts to MSP clients when breaches are detected.",
+    desc: "Worked on Deep Diver, the platform's dark web monitoring engine. Continuously scans for compromised credentials and PII. Triggers instant white-labeled alerts to MSP clients when breaches are detected.",
   },
   {
     icon: "📚",
     title: "Training & Compliance",
-    desc: "Contributed to the security awareness training system — self-paced, web-based courses with weekly refreshers to keep client employees cyber aware. Included HIPAA module support.",
+    desc: "Contributed to the security awareness training system: self-paced, web-based courses with weekly refreshers to keep client employees cyber aware. Included HIPAA module support.",
   },
   {
     icon: "📧",
     title: "Newsletter System",
-    desc: "Built and optimized the platform newsletter system for MSP client communications — improving email delivery, performance, and reducing execution time significantly.",
+    desc: "Built and optimized the platform newsletter system for MSP client communications, improving email delivery, performance, and reducing execution time significantly.",
   },
 ];
 
@@ -297,7 +329,7 @@ const CG_EXPANDED = [
   {
     icon: "🔍",
     label: "Technical Scans",
-    desc: "Platform includes pen testing and vulnerability assessment using a patent-pending algorithm — evaluating networks for weaknesses against the current threat landscape. Elevates MSPs to MSSPs.",
+    desc: "Platform includes pen testing and vulnerability assessment using a patent-pending algorithm, evaluating networks for weaknesses against the current threat landscape. Elevates MSPs to MSSPs.",
   },
   {
     icon: "📋",
@@ -307,7 +339,7 @@ const CG_EXPANDED = [
   {
     icon: "🏢",
     label: "Google Workspace & Microsoft Entra ID",
-    desc: "Direct Email Delivery (DED) integration — phishing emails inserted directly into Gmail and Outlook inboxes bypassing traditional filters, for realistic simulation testing.",
+    desc: "Direct Email Delivery (DED) integration: phishing emails inserted directly into Gmail and Outlook inboxes bypassing traditional filters, for realistic simulation testing.",
   },
 ];
 
@@ -349,17 +381,22 @@ function CyberGuardCard({ reducedMotion }: { reducedMotion: boolean }) {
           <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>CyberGuard360</h3>
           <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>Cybersecurity Platform for MSPs</p>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="font-mono rounded-full px-2 py-1" style={{ fontSize: 10, color: "#00FFB3", border: "1px solid rgba(0,255,179,0.3)" }}>Security Platform</span>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00FFB3", border: "1px solid rgba(0,255,179,0.3)", background: "rgba(0,255,179,0.06)" }}>Production</span>
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#8899AA", border: "1px solid #1E2D42" }}>Client Project</span>
           <a href="https://cyberguard360.com/features/" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] hover:text-[#00FFB3] transition-colors">
             <ExternalIcon />
           </a>
         </div>
       </div>
 
+      <div className="mt-2 mb-1">
+        <CompanyBadge name="Web Access Global" />
+      </div>
+
       {/* Tagline */}
       <p className="italic text-[#8899AA] mt-2 mb-3 pl-3" style={{ fontSize: 13, borderLeft: "3px solid #00FFB3", lineHeight: 1.6 }}>
-        Contributed to a production cybersecurity platform serving MSPs nationwide — focusing on phishing simulation, dark web monitoring, training & compliance, and newsletter systems.
+        Contributed to a production cybersecurity platform serving MSPs nationwide, focusing on phishing simulation, dark web monitoring, training &amp; compliance, and newsletter systems.
       </p>
 
       {/* Contributions grid */}
@@ -502,16 +539,21 @@ function PMSCard({ reducedMotion }: { reducedMotion: boolean }) {
           <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>PMS</h3>
           <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>Event Management System</p>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded-full px-2 py-1" style={{ fontSize: 10 }}>Web App</span>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.06)" }}>Production</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>Client Project</span>
           <a href="https://github.com/surti1mr/PMS" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] hover:text-[#00D4FF] transition-colors">
             <GitHubIcon />
           </a>
         </div>
       </div>
+      <div className="mt-2 mb-1">
+        <CompanyBadge name="Web Access Global" />
+      </div>
+
       {/* Tagline */}
       <p className="italic text-[#8899AA] mt-2 mb-3 pl-3" style={{ fontSize: 13, borderLeft: "3px solid #00D4FF", lineHeight: 1.6 }}>
-        Flask-based event management platform with role-based access control and a RESTful API — originally built to manage open mic and stand-up comedy events.
+        Flask-based event management platform with role-based access control and a RESTful API, originally built to manage open mic and stand-up comedy events.
       </p>
       {/* Role cards */}
       <p className="font-mono text-[#8899AA] uppercase tracking-wider mb-2" style={{ fontSize: 10 }}>User Roles</p>
@@ -630,13 +672,18 @@ function VMIMSCard({ reducedMotion }: { reducedMotion: boolean }) {
           <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>VMIMS</h3>
           <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>Vending Machine Inventory System</p>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="font-mono rounded-full px-2 py-1" style={{ fontSize: 10, color: "#7C3AED", border: "1px solid rgba(124,58,237,0.4)", background: "rgba(124,58,237,0.08)" }}>SAP ABAP</span>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#7C3AED", border: "1px solid rgba(124,58,237,0.4)", background: "rgba(124,58,237,0.08)" }}>Real SAP Env</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>Enterprise</span>
           <a href="https://github.com/surti1mr/Vending-Machine-Inventory-Management-System" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] hover:text-[#7C3AED] transition-colors">
             <GitHubIcon />
           </a>
         </div>
       </div>
+      <div className="mt-2 mb-1">
+        <CompanyBadge name="Central Michigan University" />
+      </div>
+
       {/* Tagline */}
       <p className="italic text-[#8899AA] mt-2 mb-3 pl-3" style={{ fontSize: 13, borderLeft: "3px solid #7C3AED", lineHeight: 1.6 }}>
         ABAP Module Pool Program for managing vending machines, products, students, stock levels, and usage logging inside an SAP environment.
@@ -701,7 +748,7 @@ const DIJORI_FEATURES = [
   {
     icon: "🔐",
     label: "Tijori Vault",
-    desc: "Double-encrypted secure vault for all file types — documents, notes, voice, and image files. Files are only shared at a specific trigger event when you're incapable of sharing them yourself.",
+    desc: "Double-encrypted secure vault for all file types: documents, notes, voice, and image files. Files are only shared at a specific trigger event when you're incapable of sharing them yourself.",
   },
   {
     icon: "👥",
@@ -711,7 +758,7 @@ const DIJORI_FEATURES = [
   {
     icon: "📁",
     label: "My Drive",
-    desc: "An unencrypted quick-access drive for everyday files. Share files or folders directly with contacts. Same creation tools as Tijori — notes, voice, images.",
+    desc: "An unencrypted quick-access drive for everyday files. Share files or folders directly with contacts. Same creation tools as Tijori: notes, voice, images.",
   },
 ];
 
@@ -784,12 +831,15 @@ function DijoriCard({ reducedMotion }: { reducedMotion: boolean }) {
             Digital Tijori
           </p>
         </div>
-        <span
-          className="font-mono text-[#8899AA] border border-[#1E2D42] rounded-full px-2 py-1 flex-shrink-0"
-          style={{ fontSize: 10 }}
-        >
-          Web + Mobile
-        </span>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.06)" }}>Production</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>Client Project</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded-full px-2 py-1 flex-shrink-0" style={{ fontSize: 10 }}>Web + Mobile</span>
+        </div>
+      </div>
+
+      <div className="mt-2 mb-1">
+        <CompanyBadge name="Web Access Global" />
       </div>
 
       {/* Tagline */}
@@ -914,12 +964,243 @@ function DijoriCard({ reducedMotion }: { reducedMotion: boolean }) {
 
       {/* Footer */}
       <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#1E2D42]">
-        <span
-          className="font-mono italic text-[#8899AA]"
-          style={{ fontSize: 11 }}
+        <a
+          href="https://github.com/surti1mr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 font-mono hover:opacity-75 transition-opacity"
+          style={{ fontSize: 11, color: "#00D4FF" }}
         >
-          No public link available
-        </span>
+          <GitHubIcon />
+          View on GitHub
+        </a>
+      </div>
+    </motion.div>
+  );
+}
+
+// ── DMS shared constants ───────────────────────────────────────────────────────
+
+const DMS_COMPANY = "Detroit Manufacturing Systems / Voltava";
+
+// ── DMS Issue Management System card ─────────────────────────────────────────
+
+const DMS_IMS_PILLS = [
+  "🔧 Bug Fixes Across 6 Modules",
+  "✨ New Feature Delivery",
+  "🏭 HSE · RISC · SQC · Scheduling",
+  "👥 Used by Plant Floor Teams Daily",
+];
+
+const DMS_IMS_TECH = ["VB.NET", "SQL Server", "SSRS", "Plant Operations"];
+
+function DMSIssueCard({ reducedMotion }: { reducedMotion: boolean }) {
+  return (
+    <motion.div
+      initial={reducedMotion ? {} : { opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0 }}
+      whileHover={reducedMotion ? {} : { y: -4 }}
+      className="glass-card rounded-xl p-6 flex flex-col border border-[#1E2D42] hover:border-[rgba(0,212,255,0.2)] transition-all duration-300 cursor-default"
+      style={{ boxShadow: "none", transition: "box-shadow 0.3s, border-color 0.3s, transform 0.3s" }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 30px rgba(0,212,255,0.12)"; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>DMS Issue Management System</h3>
+          <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>Multi-module internal issue tracking system for plant operations.</p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.06)" }}>Internal Tool</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>Multi-Module</span>
+        </div>
+      </div>
+      <div className="mt-2 mb-1">
+        <CompanyBadge name={DMS_COMPANY} />
+      </div>
+
+      {/* Description */}
+      <p className="text-[#8899AA] text-sm mt-2" style={{ lineHeight: 1.7 }}>
+        Maintained and extended a multi-module internal issue tracking system covering HSE (Health, Safety &amp; Environment), RISC, SQC Logs, and Service Screen Scheduling. Resolved existing bugs across all modules and shipped new features to improve operational workflows for plant floor teams.
+      </p>
+
+      {/* Feature pills */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        {DMS_IMS_PILLS.map((p) => (
+          <span
+            key={p}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-[#E8F4FD] border border-[rgba(0,212,255,0.15)] bg-[rgba(0,212,255,0.06)]"
+          >
+            {p}
+          </span>
+        ))}
+      </div>
+
+      {/* Tech */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        {DMS_IMS_TECH.map((t) => (
+          <span key={t} className="font-mono text-xs text-[#8899AA] border-b border-[#1E2D42] pb-0.5">{t}</span>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#1E2D42]">
+        <span className="font-mono rounded px-2.5 py-1 text-[#8899AA] border border-[#1E2D42] bg-[#070B14]" style={{ fontSize: 10 }}>🔒 Internal Tool · No Public Link</span>
+      </div>
+    </motion.div>
+  );
+}
+
+// ── Cycle Count Web Application card ─────────────────────────────────────────
+
+const DMS_CC_PILLS = [
+  "📄 Eliminated Paper + Excel Process",
+  "🔗 SAP API Real-Time Integration",
+  "📧 Automated Weekly Email Reports",
+  "🏆 Scoreboard: Daily/Weekly/Monthly",
+  "🏭 Used Daily on the Plant Floor",
+];
+
+const DMS_CC_TECH = ["React", "FastAPI", "SAP API", "SQL Server", "Automated Email", "REST APIs", "Full-Stack"];
+
+function DMSCycleCountCard({ reducedMotion }: { reducedMotion: boolean }) {
+  return (
+    <motion.div
+      initial={reducedMotion ? {} : { opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      whileHover={reducedMotion ? {} : { y: -4 }}
+      className="glass-card rounded-xl p-6 flex flex-col border border-[rgba(0,212,255,0.35)] hover:border-[rgba(0,212,255,0.5)] transition-all duration-300 cursor-default"
+      style={{
+        boxShadow: "0 0 0 1px rgba(0,212,255,0.06), 0 4px 24px rgba(0,212,255,0.08)",
+        transition: "box-shadow 0.3s, border-color 0.3s, transform 0.3s",
+        background: "rgba(0,212,255,0.025)",
+      }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,212,255,0.18)"; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 0 1px rgba(0,212,255,0.06), 0 4px 24px rgba(0,212,255,0.08)"; }}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <div className="flex items-center gap-2 mb-1 flex-wrap">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono bg-[rgba(0,212,255,0.12)] border border-[rgba(0,212,255,0.3)] text-[#00D4FF]">
+              ⭐ Featured
+            </span>
+          </div>
+          <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>Cycle Count Web Application</h3>
+          <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>Full-stack app that eliminated manual paper-based cycle counting.</p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.06)" }}>Full-Stack</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>Production</span>
+        </div>
+      </div>
+      <div className="mt-2 mb-1">
+        <CompanyBadge name={DMS_COMPANY} />
+      </div>
+
+      {/* Description */}
+      <p className="text-[#8899AA] text-sm mt-2" style={{ lineHeight: 1.7 }}>
+        Designed and built a complete web application from scratch to replace the manual cycle count process, eliminating paper forms and Excel sheets used across the plant. Integrated SAP API for real-time inventory data, automated weekly email reports to supervisors, and built a scoreboard dashboard for tracking counter performance.
+      </p>
+
+      {/* Feature pills */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        {DMS_CC_PILLS.map((p) => (
+          <span
+            key={p}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-[#E8F4FD] border border-[rgba(0,212,255,0.2)] bg-[rgba(0,212,255,0.08)]"
+          >
+            {p}
+          </span>
+        ))}
+      </div>
+
+      {/* Tech */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        {DMS_CC_TECH.map((t) => (
+          <span key={t} className="font-mono text-xs text-[#8899AA] border-b border-[#1E2D42] pb-0.5">{t}</span>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#1E2D42]">
+        <span className="font-mono rounded px-2.5 py-1 text-[#8899AA] border border-[#1E2D42] bg-[#070B14]" style={{ fontSize: 10 }}>🔒 Internal Tool · No Public Link</span>
+      </div>
+    </motion.div>
+  );
+}
+
+// ── Dock Monitoring System card ───────────────────────────────────────────────
+
+const DMS_DOCK_PILLS = [
+  "📡 Real-Time Dock Status",
+  "🔌 Third-Party API Integration",
+  "🏭 Live Plant Floor Visibility",
+  "⚡ Replaced Manual Checks",
+];
+
+const DMS_DOCK_TECH = ["REST APIs", "Real-Time Dashboard", "Third-Party API", "Plant Operations"];
+
+function DMSDockCard({ reducedMotion }: { reducedMotion: boolean }) {
+  return (
+    <motion.div
+      initial={reducedMotion ? {} : { opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      whileHover={reducedMotion ? {} : { y: -4 }}
+      className="glass-card rounded-xl p-6 flex flex-col border border-[#1E2D42] hover:border-[rgba(0,212,255,0.2)] transition-all duration-300 cursor-default"
+      style={{ boxShadow: "none", transition: "box-shadow 0.3s, border-color 0.3s, transform 0.3s" }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 30px rgba(0,212,255,0.12)"; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <h3 className="font-display font-bold text-[#E8F4FD]" style={{ fontSize: 20 }}>Dock Monitoring System</h3>
+          <p className="font-mono text-[#8899AA] mt-1" style={{ fontSize: 11 }}>Real-time dock door monitoring via third-party API integration.</p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+          <span className="font-mono rounded px-2 py-0.5" style={{ fontSize: 10, color: "#00D4FF", border: "1px solid rgba(0,212,255,0.3)", background: "rgba(0,212,255,0.06)" }}>Real-Time</span>
+          <span className="font-mono text-[#8899AA] border border-[#1E2D42] rounded px-2 py-0.5" style={{ fontSize: 10 }}>Integration</span>
+        </div>
+      </div>
+      <div className="mt-2 mb-1">
+        <CompanyBadge name={DMS_COMPANY} />
+      </div>
+
+      {/* Description */}
+      <p className="text-[#8899AA] text-sm mt-2" style={{ lineHeight: 1.7 }}>
+        Integrated a third-party API to provide real-time visibility into dock door status across the plant floor. Replaced manual checks with a live dashboard, giving operations teams instant awareness of dock activity.
+      </p>
+
+      {/* Feature pills */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        {DMS_DOCK_PILLS.map((p) => (
+          <span
+            key={p}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-[#E8F4FD] border border-[rgba(0,212,255,0.15)] bg-[rgba(0,212,255,0.06)]"
+          >
+            {p}
+          </span>
+        ))}
+      </div>
+
+      {/* Tech */}
+      <div className="flex flex-wrap gap-2 mt-4">
+        {DMS_DOCK_TECH.map((t) => (
+          <span key={t} className="font-mono text-xs text-[#8899AA] border-b border-[#1E2D42] pb-0.5">{t}</span>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="flex justify-between items-center mt-4 pt-3 border-t border-[#1E2D42]">
+        <span className="font-mono rounded px-2.5 py-1 text-[#8899AA] border border-[#1E2D42] bg-[#070B14]" style={{ fontSize: 10 }}>🔒 Internal Tool · No Public Link</span>
       </div>
     </motion.div>
   );
@@ -940,9 +1221,12 @@ export default function ProjectsSection() {
           transition={{ duration: 0.5 }}
         >
           <p className="section-label mb-3">{'// projects'}</p>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-[#E8F4FD] mb-12">
+          <h2 className="font-display font-bold text-4xl md:text-5xl text-[#E8F4FD] mb-4">
             Things I&apos;ve Built
           </h2>
+          <p className="text-[#8899AA] text-base mb-12 max-w-2xl">
+            Nine of these are production systems shipped for real organizations, used by real users every day. One is a personal project.
+          </p>
         </motion.div>
 
         {/* Featured project */}
@@ -960,10 +1244,16 @@ export default function ProjectsSection() {
                 <span className="px-2.5 py-0.5 bg-[rgba(0,212,255,0.1)] border border-[rgba(0,212,255,0.3)] rounded text-xs font-mono text-[#00D4FF]">
                   Featured Project
                 </span>
+                <span className="px-2.5 py-0.5 bg-[rgba(124,58,237,0.12)] border border-[rgba(124,58,237,0.3)] rounded text-xs font-mono text-[#7C3AED]">
+                  Agentic RAG System · Production
+                </span>
+                <span className="px-2.5 py-0.5 bg-[rgba(136,153,170,0.08)] border border-[#1E2D42] rounded text-xs font-mono text-[#8899AA]">
+                  Personal Project
+                </span>
               </div>
 
               <h3 className="font-display font-bold text-2xl text-[#E8F4FD]">
-                FinanceAI — AI-Powered Finance Manager
+                FinanceAI: AI-Powered Finance Manager
               </h3>
 
               <p className="text-[#8899AA] text-sm leading-relaxed">
@@ -998,15 +1288,26 @@ export default function ProjectsSection() {
                 ))}
               </div>
 
-              <a
-                href="https://github.com/surti1mr/FinanceAI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00D4FF] text-bg font-semibold text-sm rounded-md hover:bg-[#00bde0] transition-colors duration-200"
-              >
-                <GitHubIcon />
-                View on GitHub
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://github.com/surti1mr/FinanceAI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00D4FF] text-bg font-semibold text-sm rounded-md hover:bg-[#00bde0] transition-colors duration-200"
+                >
+                  <GitHubIcon />
+                  View on GitHub
+                </a>
+                <a
+                  href="https://github.com/surti1mr/FinanceAI#readme"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#7C3AED] text-[#7C3AED] font-semibold text-sm rounded-md hover:bg-[#7C3AED] hover:text-white transition-all duration-200"
+                >
+                  <ExternalIcon />
+                  Live Demo (Backend on Railway)
+                </a>
+              </div>
             </div>
 
             {/* Right — terminal mockup */}
@@ -1072,6 +1373,15 @@ export default function ProjectsSection() {
 
         {/* Secondary projects grid */}
         <div className="grid md:grid-cols-3 gap-6">
+          {/* DMS Issue Management System */}
+          <DMSIssueCard reducedMotion={reducedMotion} />
+
+          {/* Cycle Count Web Application — featured */}
+          <DMSCycleCountCard reducedMotion={reducedMotion} />
+
+          {/* Dock Monitoring System */}
+          <DMSDockCard reducedMotion={reducedMotion} />
+
           {/* CyberGuard360 — dedicated card with accordion */}
           <CyberGuardCard reducedMotion={reducedMotion} />
 
@@ -1090,6 +1400,8 @@ export default function ProjectsSection() {
 
           {/* Medha STPC — dedicated card */}
           <MedhaCard reducedMotion={reducedMotion} />
+
+          
         </div>
       </div>
     </section>

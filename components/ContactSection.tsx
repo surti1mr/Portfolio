@@ -70,8 +70,9 @@ export default function ContactSection() {
             Let&apos;s Build Something
           </h2>
           <p className="text-[#8899AA] text-base mb-12 max-w-xl">
-            Open to full-time roles in AI/ML engineering, agentic AI, and
-            full-stack development. Based in Michigan, open to relocation.
+            Open to full-time roles in AI Application Engineering, Agentic AI,
+            LLM/RAG systems, and Full-Stack AI development. Based in Michigan,
+            open to relocation.
           </p>
         </motion.div>
 

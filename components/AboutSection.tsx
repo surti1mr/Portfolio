@@ -6,8 +6,8 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 const stats = [
   { value: "5+", label: "Years Experience" },
   { value: "3.95", label: "GPA (M.S.)" },
+  { value: "7", label: "Projects Shipped" },
   { value: "2nd", label: "Stand-Up Competition" },
-  { value: "70%", label: "Dev Speed Boost" },
 ];
 
 export default function AboutSection() {
@@ -50,14 +50,15 @@ export default function AboutSection() {
             className="space-y-5"
           >
             <p className="text-[#8899AA] text-base leading-relaxed">
-              I&apos;m an AI/ML engineer who specializes in building production-grade
-              systems that actually ship. I graduated from{" "}
+              I&apos;m an AI Application Engineer who specializes in building
+              production-grade LLM-powered systems that actually ship. My focus is on
+              agentic AI, RAG pipelines, and full-stack AI products — turning LLM
+              capabilities into reliable software organizations depend on. I graduated
+              from{" "}
               <span className="text-[#E8F4FD]">
                 Central Michigan University
               </span>{" "}
-              with an M.S. in Information Systems (SAP) and a 3.95 GPA, and
-              I&apos;ve spent years turning complex AI research into reliable software
-              that organizations can depend on.
+              with an M.S. in Information Systems (SAP) and a 3.95 GPA.
             </p>
             <p className="text-[#8899AA] text-base leading-relaxed">
               From dark web monitoring systems at a global cybersecurity firm to
