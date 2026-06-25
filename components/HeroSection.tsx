@@ -84,8 +84,8 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.45 }}
             className="text-[#8899AA] text-base leading-relaxed max-w-lg"
           >
-            I build AI-powered applications that actually ship — agentic pipelines,
-            RAG systems, and full-stack LLM products. And apparently I&apos;m also funny.
+            I build AI-powered applications that actually ship: agentic pipelines,
+            RAG systems, and full-stack LLM products. I also know how to explain them to non-technical stakeholders.
           </motion.p>
 
           {/* CTAs */}

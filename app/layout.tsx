@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mayank Surti — AI Application Engineer",
+  title: "Mayank Surti | AI Application Engineer",
   description:
     "Full-stack AI engineer specializing in agentic AI, RAG pipelines, and LLM-powered applications. Building production systems with LangGraph, FastAPI, and Next.js.",
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "full-stack AI developer",
   ],
   openGraph: {
-    title: "Mayank Surti — AI Application Engineer",
+    title: "Mayank Surti | AI Application Engineer",
     description:
       "Building production AI systems and occasionally doing stand-up comedy.",
     url: "https://mayanksurti.dev",

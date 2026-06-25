@@ -52,7 +52,7 @@ export default function AboutSection() {
             <p className="text-[#8899AA] text-base leading-relaxed">
               I&apos;m an AI Application Engineer who specializes in building
               production-grade LLM-powered systems that actually ship. My focus is on
-              agentic AI, RAG pipelines, and full-stack AI products — turning LLM
+              agentic AI, RAG pipelines, and full-stack AI products, turning LLM
               capabilities into reliable software organizations depend on. I graduated
               from{" "}
               <span className="text-[#E8F4FD]">
