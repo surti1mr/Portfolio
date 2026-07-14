@@ -6,7 +6,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 const stats = [
   { value: "5+", label: "Years Experience" },
   { value: "3.95", label: "GPA (M.S.)" },
-  { value: "7", label: "Projects Shipped" },
+  { value: "10", label: "Projects Shipped" },
   { value: "2nd", label: "Stand-Up Competition" },
 ];
 
