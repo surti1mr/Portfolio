@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useAchievements } from "@/components/AchievementsProvider";
 
 const contactItems = [
   {
@@ -39,6 +40,7 @@ const contactItems = [
 
 export default function ContactSection() {
   const reducedMotion = useReducedMotion();
+  const { unlock } = useAchievements();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,6 +49,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    unlock("recruiter_mode");
     const subject = encodeURIComponent(
       `Portfolio Contact from ${formData.name}`
     );
@@ -103,6 +106,7 @@ export default function ContactSection() {
                     {...(item.isExternal
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
+                    onClick={() => unlock("recruiter_mode")}
                     className="text-[#8899AA] hover:text-[#00D4FF] transition-colors duration-200 text-sm break-all"
                   >
                     {item.label}

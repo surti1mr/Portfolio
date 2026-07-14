@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useAchievements } from "@/components/AchievementsProvider";
 
 interface Message {
   role: "user" | "assistant";
@@ -27,6 +28,7 @@ export default function HeroChatPanel() {
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const { unlock } = useAchievements();
 
   const scrollToBottom = useCallback(() => {
     const el = messagesContainerRef.current;
@@ -170,6 +172,7 @@ export default function HeroChatPanel() {
       const trimmed = text.trim();
       if (!trimmed || isStreaming) return;
 
+      unlock("first_contact");
       setInputValue("");
       const newUserMsg: Message = { role: "user", content: trimmed };
       setMessages((prev) => {
@@ -180,8 +183,26 @@ export default function HeroChatPanel() {
 
       await streamResponse(trimmed, [...messages, newUserMsg]);
     },
-    [isStreaming, messages, streamResponse]
+    [isStreaming, messages, streamResponse, unlock]
   );
+
+  // CustomEvent "portfolio:ask-ai", detail: { question: string; autoSend: boolean }
+  // Dispatched by CareerRunnerGame's game-over "Ask my AI" button.
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail ?? {};
+      const question: string | undefined = detail.question;
+      if (!question) return;
+      if (detail.autoSend && !isStreaming) {
+        sendMessage(question);
+      } else {
+        setInputValue(question);
+        inputRef.current?.focus({ preventScroll: true });
+      }
+    };
+    window.addEventListener("portfolio:ask-ai", handler);
+    return () => window.removeEventListener("portfolio:ask-ai", handler);
+  }, [sendMessage, isStreaming]);
 
   const handleSend = () => sendMessage(inputValue);
 

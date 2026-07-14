@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useAchievements } from "@/components/AchievementsProvider";
 
 const featuredHighlights = [
   { icon: "🔒", text: "Per-user data isolation" },
@@ -363,6 +364,7 @@ const CG_TECH = [
 
 function CyberGuardCard({ reducedMotion }: { reducedMotion: boolean }) {
   const [expanded, setExpanded] = useState(false);
+  const { unlock } = useAchievements();
   return (
     <motion.div
       initial={reducedMotion ? {} : { opacity: 0, y: 30 }}
@@ -411,7 +413,7 @@ function CyberGuardCard({ reducedMotion }: { reducedMotion: boolean }) {
       </div>
 
       {/* Accordion */}
-      <button onClick={() => setExpanded((v) => !v)} className="mt-3 self-start font-mono hover:opacity-80 transition-opacity" style={{ fontSize: 11, color: "#00FFB3", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+      <button onClick={() => { setExpanded((v) => !v); unlock("deep_dive"); }} className="mt-3 self-start font-mono hover:opacity-80 transition-opacity" style={{ fontSize: 11, color: "#00FFB3", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
         {expanded ? "Show less ↑" : "Show more ↓"}
       </button>
       <AnimatePresence>
@@ -521,6 +523,7 @@ const PMS_TECH = [
 
 function PMSCard({ reducedMotion }: { reducedMotion: boolean }) {
   const [expanded, setExpanded] = useState(true);
+  const { unlock } = useAchievements();
   return (
     <motion.div
       initial={reducedMotion ? {} : { opacity: 0, y: 30 }}
@@ -566,7 +569,7 @@ function PMSCard({ reducedMotion }: { reducedMotion: boolean }) {
         ))}
       </div>
       {/* Accordion toggle */}
-      <button onClick={() => setExpanded((v) => !v)} className="mt-3 self-start font-mono text-[#00D4FF] hover:opacity-80 transition-opacity" style={{ fontSize: 11, background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+      <button onClick={() => { setExpanded((v) => !v); unlock("deep_dive"); }} className="mt-3 self-start font-mono text-[#00D4FF] hover:opacity-80 transition-opacity" style={{ fontSize: 11, background: "none", border: "none", padding: 0, cursor: "pointer" }}>
         {expanded ? "Show less ↑" : "Show more ↓"}
       </button>
       <AnimatePresence>
@@ -654,6 +657,7 @@ const VMIMS_TECH = [
 
 function VMIMSCard({ reducedMotion }: { reducedMotion: boolean }) {
   const [expanded, setExpanded] = useState(true);
+  const { unlock } = useAchievements();
   return (
     <motion.div
       initial={reducedMotion ? {} : { opacity: 0, y: 30 }}
@@ -704,7 +708,7 @@ function VMIMSCard({ reducedMotion }: { reducedMotion: boolean }) {
         ))}
       </div>
       {/* Accordion */}
-      <button onClick={() => setExpanded((v) => !v)} className="mt-3 self-start font-mono text-[#7C3AED] hover:opacity-80 transition-opacity" style={{ fontSize: 11, background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+      <button onClick={() => { setExpanded((v) => !v); unlock("deep_dive"); }} className="mt-3 self-start font-mono text-[#7C3AED] hover:opacity-80 transition-opacity" style={{ fontSize: 11, background: "none", border: "none", padding: 0, cursor: "pointer" }}>
         {expanded ? "Show less ↑" : "Show more ↓"}
       </button>
       <AnimatePresence>
@@ -794,6 +798,7 @@ const DIJORI_TECH = [
 
 function DijoriCard({ reducedMotion }: { reducedMotion: boolean }) {
   const [expanded, setExpanded] = useState(false);
+  const { unlock } = useAchievements();
 
   return (
     <motion.div
@@ -863,7 +868,7 @@ function DijoriCard({ reducedMotion }: { reducedMotion: boolean }) {
 
       {/* Accordion toggle */}
       <button
-        onClick={() => setExpanded((v) => !v)}
+        onClick={() => { setExpanded((v) => !v); unlock("deep_dive"); }}
         className="mt-2 self-start font-mono text-[#00D4FF] hover:opacity-80 transition-opacity"
         style={{ fontSize: 11, background: "none", border: "none", padding: 0, cursor: "pointer" }}
       >
@@ -1059,14 +1064,40 @@ function DMSIssueCard({ reducedMotion }: { reducedMotion: boolean }) {
 const DMS_CC_PILLS = [
   "📄 Eliminated Paper + Excel Process",
   "🔗 SAP API Real-Time Integration",
-  "📧 Automated Weekly Email Reports",
+  "🧾 12-Point Investigation Checklist",
+  "🔐 Role-Based Access Control",
+  "📱 Email + SMS Notifications",
   "🏆 Scoreboard: Daily/Weekly/Monthly",
   "🏭 Used Daily on the Plant Floor",
+];
+
+const DMS_CC_IMPACT = [
+  { value: "15–25", label: "person-hrs saved / week" },
+  { value: "750–1,250", label: "person-hrs saved / year" },
+  { value: "$30K–$75K", label: "est. labor savings / year" },
+];
+
+const DMS_CC_SAVINGS = [
+  { task: "Scheduling which parts to count", before: "30–60 min/day, planner picks manually", after: "Automatic by ABC class" },
+  { task: "Count entry + variance calc", before: "5–10 min/part: SAP lookup, typing, formulas", after: "SAP auto-fetched, variance auto-calculated" },
+  { task: "Variance triage & routing", before: "1–2 hrs/week of manual review + email chains", after: "Auto-created, status-routed, email/SMS sent" },
+  { task: "Investigation tracking", before: "30–60 min/variance on paper & email", after: "Digital 12-point checklist, history tracked" },
+  { task: "Approvals", before: "Email approvals, no audit trail", after: "One-click approve, full history logged" },
+  { task: "Reporting & scoreboard", before: "2–3 hrs/week of manual Excel pivots", after: "Real-time, auto-generated" },
+];
+
+const DMS_CC_EXTRAS = [
+  "Eliminated human error in variance calculations",
+  "Full audit trail for every count and approval",
+  "A-part discrepancies caught same day, not end-of-week",
+  "Guided tours for onboarding new counters",
 ];
 
 const DMS_CC_TECH = ["React", "FastAPI", "SAP API", "SQL Server", "Automated Email", "REST APIs", "Full-Stack"];
 
 function DMSCycleCountCard({ reducedMotion }: { reducedMotion: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+  const { unlock } = useAchievements();
   return (
     <motion.div
       initial={reducedMotion ? {} : { opacity: 0, y: 30 }}
@@ -1105,8 +1136,55 @@ function DMSCycleCountCard({ reducedMotion }: { reducedMotion: boolean }) {
 
       {/* Description */}
       <p className="text-[#8899AA] text-sm mt-2" style={{ lineHeight: 1.7 }}>
-        Designed and built a complete web application from scratch to replace the manual cycle count process, eliminating paper forms and Excel sheets used across the plant. Integrated SAP API for real-time inventory data, automated weekly email reports to supervisors, and built a scoreboard dashboard for tracking counter performance.
+        Designed and built a complete web application from scratch to replace the manual cycle count process, eliminating paper forms and Excel sheets used across the plant. Integrated SAP API for real-time inventory data, a full variance investigation workflow with a digital 12-point checklist, role-based access, email/SMS notifications, automated weekly reports to supervisors, and a scoreboard dashboard for tracking counter performance.
       </p>
+
+      {/* Impact stats */}
+      <p className="font-mono uppercase tracking-wider mt-4 mb-2" style={{ fontSize: 10, color: "#00FFB3" }}>Estimated Impact</p>
+      <div className="grid grid-cols-3 gap-2">
+        {DMS_CC_IMPACT.map((s) => (
+          <div key={s.label} className="rounded-lg px-2 py-2.5 text-center" style={{ background: "rgba(0,255,179,0.05)", border: "1px solid rgba(0,255,179,0.15)" }}>
+            <p className="font-display font-bold" style={{ fontSize: 16, color: "#00FFB3" }}>{s.value}</p>
+            <p className="text-[#8899AA] mt-0.5" style={{ fontSize: 10, lineHeight: 1.4 }}>{s.label}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-[#8899AA] italic mt-1.5" style={{ fontSize: 11 }}>
+        Conservative estimate across a team of ~10 people — the kind of internal tool that pays for itself within its first quarter of use.
+      </p>
+
+      {/* Accordion: manual vs app breakdown */}
+      <button onClick={() => { setExpanded((v) => !v); unlock("deep_dive"); }} className="mt-3 self-start font-mono text-[#00D4FF] hover:opacity-80 transition-opacity" style={{ fontSize: 11, background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+        {expanded ? "Hide time savings breakdown ↑" : "See time savings breakdown ↓"}
+      </button>
+      <AnimatePresence>
+        {expanded && (
+          <motion.div initial={reducedMotion ? {} : { opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={reducedMotion ? {} : { opacity: 0, height: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
+            <div className="mt-2 space-y-2">
+              {DMS_CC_SAVINGS.map((row) => (
+                <div key={row.task} className="rounded-lg px-3 py-2.5" style={{ background: "rgba(0,212,255,0.04)", border: "1px solid rgba(0,212,255,0.12)" }}>
+                  <p className="font-mono font-semibold" style={{ fontSize: 12, color: "#00D4FF" }}>{row.task}</p>
+                  <p className="mt-1" style={{ fontSize: 12, lineHeight: 1.6 }}>
+                    <span className="text-[#8899AA] line-through decoration-[rgba(255,95,87,0.5)]">{row.before}</span>
+                    <span className="text-[#8899AA]"> — </span>
+                    <span style={{ color: "#00FFB3" }}>{row.after}</span>
+                  </p>
+                </div>
+              ))}
+              <div className="rounded-lg px-3 py-2.5" style={{ background: "rgba(124,58,237,0.06)", border: "1px solid rgba(124,58,237,0.15)" }}>
+                <p className="font-mono font-semibold" style={{ fontSize: 12, color: "#7C3AED" }}>💡 Beyond the hours</p>
+                <div className="mt-1 space-y-0.5">
+                  {DMS_CC_EXTRAS.map((e) => (
+                    <p key={e} className="flex items-start gap-1.5 text-[#8899AA]" style={{ fontSize: 12, lineHeight: 1.6 }}>
+                      <span style={{ color: "#00FFB3", flexShrink: 0 }}>✓</span>{e}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Feature pills */}
       <div className="flex flex-wrap gap-2 mt-4">

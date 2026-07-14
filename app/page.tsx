@@ -4,24 +4,31 @@ import AboutSection from "@/components/AboutSection";
 import TechStackSection from "@/components/TechStackSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import ComedySection from "@/components/ComedySection";
-import StackJumpGame from "@/components/StackJumpGame";
+import CareerRunnerGame from "@/components/CareerRunnerGame";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import AchievementsProvider from "@/components/AchievementsProvider";
+import AchievementsHud from "@/components/AchievementsHud";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <TechStackSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <ComedySection />
-      <StackJumpGame />
-      <ContactSection />
-      <Footer />
-    </main>
+    <AchievementsProvider>
+      <main>
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <TechStackSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <CertificationsSection />
+        <ComedySection />
+        <CareerRunnerGame />
+        <ContactSection />
+        <Footer />
+        <AchievementsHud />
+      </main>
+    </AchievementsProvider>
   );
 }
