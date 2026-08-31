@@ -35,6 +35,18 @@ const certifications: Certification[] = [
     date: "Jul 2026",
     url: "https://verify.skilljar.com/c/nzjanrrx8d6s",
   },
+  {
+    title: "Introduction to Agent Skills",
+    issuer: "Anthropic Education",
+    date: "Aug 2026",
+    url: "https://verify.skilljar.com/c/ind59knbu2ur",
+  },
+  {
+    title: "Introduction to Model Context Protocol",
+    issuer: "Anthropic Education",
+    date: "Aug 2026",
+    url: "https://verify.skilljar.com/c/qqv23ub9cpq3",
+  },
 ];
 
 function ExternalIcon() {

@@ -11,6 +11,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AchievementsProvider from "@/components/AchievementsProvider";
 import AchievementsHud from "@/components/AchievementsHud";
+import SoundtrackPlayer from "@/components/SoundtrackPlayer";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <ContactSection />
         <Footer />
         <AchievementsHud />
+        <SoundtrackPlayer />
       </main>
     </AchievementsProvider>
   );
