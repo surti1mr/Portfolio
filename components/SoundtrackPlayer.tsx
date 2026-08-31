@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const TRACK_SRC = "/audio/mayank-surti-suno.mp3";
-const TRACK_TITLE = "Mayank Surti Rap Song status";
+const TRACK_TITLE = "Mayank Surti Rap Song";
 const TRACK_SUBTITLE = "the portfolio, as a rap verse";
 const SKIP_SECONDS = 10;
 
