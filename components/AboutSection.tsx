@@ -7,7 +7,7 @@ const stats = [
   { value: "5+", label: "Years Experience" },
   { value: "3.95", label: "GPA (M.S.)" },
   { value: "10", label: "Projects Shipped" },
-  { value: "2nd", label: "Stand-Up Competition" },
+  { value: "2", label: "Countries Performed In" },
 ];
 
 export default function AboutSection() {
@@ -68,9 +68,11 @@ export default function AboutSection() {
               the people who need them.
             </p>
             <p className="text-[#8899AA] text-base leading-relaxed">
-              Outside of code, I competed in a stand-up comedy competition and
-              placed 2nd based on live audience votes. It turns out clarity,
-              timing, and knowing your audience applies everywhere.
+              Outside of code, I&apos;ve competed in stand-up comedy competitions
+              on two continents &mdash; taking 1st at Comedy Ladder in Mumbai and
+              2nd on live audience votes at an open mic competition in Downtown
+              Mount Pleasant, MI. It turns out clarity, timing, and knowing your
+              audience applies everywhere.
             </p>
           </motion.div>
 

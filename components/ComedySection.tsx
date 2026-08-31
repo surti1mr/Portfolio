@@ -5,6 +5,23 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const skills = ["Public Speaking", "Audience Awareness", "Creative Thinking"];
 
+const comedyResults = [
+  {
+    country: "India",
+    placement: "1st Place",
+    event: "Comedy Ladder",
+    city: "Mumbai, India",
+    year: "2017",
+  },
+  {
+    country: "USA",
+    placement: "2nd Place",
+    event: "Open Mic Comedy Competition",
+    city: "Downtown Mount Pleasant, MI",
+    year: "",
+  },
+];
+
 export default function ComedySection() {
   const reducedMotion = useReducedMotion();
 
@@ -37,44 +54,48 @@ export default function ComedySection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left — comedy card */}
+          {/* Left — one card per country */}
           <motion.div
             initial={reducedMotion ? {} : { opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            <div className="glass-card rounded-2xl p-10 text-center border border-[rgba(0,255,179,0.1)] hover:border-[rgba(0,255,179,0.2)] transition-colors duration-300">
+            {comedyResults.map((result) => (
               <div
-                className="text-7xl mb-6 select-none"
-                role="img"
-                aria-label="microphone"
+                key={result.country}
+                className="glass-card rounded-2xl p-6 text-center border border-[rgba(0,255,179,0.1)] hover:border-[rgba(0,255,179,0.2)] transition-colors duration-300"
               >
-                🎤
-              </div>
-
-              <div className="space-y-2 mb-6">
-                <p
-                  className="font-display font-bold text-4xl"
-                  style={{ color: "#00FFB3" }}
+                <div
+                  className="text-5xl mb-4 select-none"
+                  role="img"
+                  aria-label="microphone"
                 >
-                  2nd Place
-                </p>
-                <p className="font-display font-semibold text-lg text-[#E8F4FD]">
-                  Stand-Up Comedy Competition
-                </p>
-                <p className="font-mono text-xs text-[#8899AA] tracking-wide">
-                  Downtown Mount Pleasant, MI
-                </p>
-              </div>
+                  🎤
+                </div>
 
-              <p className="text-[#8899AA] text-sm leading-relaxed">
-                &ldquo;Competed in an open mic comedy competition and secured 2nd
-                place based on live audience voting. Turns out the skills that
-                make a great code review also make great punchlines: clarity,
-                timing, and knowing your audience.&rdquo;
-              </p>
-            </div>
+                <div className="space-y-1.5">
+                  <p
+                    className="font-display font-bold text-3xl"
+                    style={{ color: "#00FFB3" }}
+                  >
+                    {result.placement}
+                  </p>
+                  <p className="font-display font-semibold text-base text-[#E8F4FD]">
+                    {result.event}
+                  </p>
+                  <p className="font-mono text-xs text-[#8899AA] tracking-wide">
+                    {result.city}
+                  </p>
+                  {result.year && (
+                    <p className="font-mono text-xs text-[#8899AA] tracking-wide">
+                      {result.year}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
           </motion.div>
 
           {/* Right — blockquote + skills */}

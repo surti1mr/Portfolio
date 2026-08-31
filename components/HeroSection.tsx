@@ -9,7 +9,7 @@ const roles = [
   "AI Application Engineer",
   "Agentic AI Builder",
   "Full-Stack AI Developer",
-  "2nd Place Comedian 🎤",
+  "Stand-Up Comedian in 2 Countries 🎤",
 ];
 
 export default function HeroSection() {

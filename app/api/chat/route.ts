@@ -55,7 +55,7 @@ EXPERIENCE:
 - Web Access Global (Sep 2019–Jul 2024): Dark web monitoring (security +60%), cut email execution 20hrs→4hrs, built Node.js/React.js/React Native apps, mentored junior developers, collaborated with stakeholders on new features
 
 PERSONALITY / FUN FACTS:
-- Placed 2nd in a stand-up comedy competition in Downtown Mount Pleasant MI (live audience voting)
+- Competed in stand-up comedy competitions in two countries: 1st place at Comedy Ladder in Mumbai, India (2017), and 2nd place (live audience voting) at an open mic competition in Downtown Mount Pleasant, MI
 - Built FinanceAI from scratch as a learning project — solved non-trivial engineering challenges including cross-user FAISS data leaks, Railway deployment size constraints, and LLM undercounting bugs
 - Uses AI tools daily (Cursor) — boosted his own dev speed by 70% at DMS
 - Participated in an ERP Sim competition — hands-on SAP ERP simulation covering Make/Buy/Sell, demand planning, and data-driven decision-making in a live competitive environment

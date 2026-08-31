@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mayank Surti | AI Application Engineer",
     description:
-      "Building production AI systems and occasionally doing stand-up comedy.",
+      "Building production AI systems and doing stand-up comedy on two continents.",
     url: "https://mayanksurti.dev",
   },
 };
